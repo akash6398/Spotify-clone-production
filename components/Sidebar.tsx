@@ -22,23 +22,23 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const player = usePlayer()
 
   const routes = useMemo(
-    () => [
-      {
-        icon: HiHome,
-        label: "Home",
-        active: pathname !== "/search",
-        href: "/",
-      },
-      {
-        icon: BiSearch,
-        label: "Search",
-        active: pathname === "/search",
-        href: "/search",
-      },
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    ],
-    [],
-  )
+  () => [
+    {
+      icon: HiHome,
+      label: "Home",
+      active: pathname !== "/search",
+      href: "/",
+    },
+    {
+      icon: BiSearch,
+      label: "Search",
+      active: pathname === "/search",
+      href: "/search",
+    },
+  ],
+  [pathname],
+)
+
 
   return (
     <div className={twMerge(`flex h-full`, player.activeId && "h-[calc(100%-80px)]")}>
