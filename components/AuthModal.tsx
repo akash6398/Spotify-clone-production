@@ -7,7 +7,6 @@ import { useSessionContext, useSupabaseClient } from "@supabase/auth-helpers-rea
 import { useRouter } from "next/navigation"
 
 import useAuthModal from "@/hooks/useAuthModal"
-
 import Modal from "./Modal"
 import { getURL } from "@/app/utils/getURL"
 
@@ -32,12 +31,17 @@ const AuthModal = () => {
   }
 
   return (
-    <Modal title="Welcome back" description="Login to your account." isOpen={isOpen} onChange={onChange}>
+    <Modal
+      title="Welcome back"
+      description="Login to your account."
+      isOpen={isOpen}
+      onChange={onChange}
+    >
       <Auth
-        supabaseClient={supabaseClient}
+        supabaseClient={supabaseClient as any}
         providers={["github"]}
         redirectTo={getURL()}
-        magicLink={true}
+        magicLink
         appearance={{
           theme: ThemeSupa,
           variables: {

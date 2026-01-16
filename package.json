@@ -41,8 +41,5 @@
     "uniqid": "^5.4.0",
     "use-sound": "^4.0.1",
     "zustand": "^4.4.4"
-  },
-  "devDependencies": {
-    "supabase": "^1.106.1"
   }
 }
