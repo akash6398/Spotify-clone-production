@@ -21,7 +21,11 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const pathname = usePathname()
   const player = usePlayer()
 
+<<<<<<< HEAD
  const routes = useMemo(
+=======
+  const routes = useMemo(
+>>>>>>> 888f8450f4d92fcd6e242f3eed33c0ee6211ebd9
   () => [
     {
       icon: HiHome,
@@ -38,6 +42,10 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   ],
   [pathname],
 )
+<<<<<<< HEAD
+=======
+
+>>>>>>> 888f8450f4d92fcd6e242f3eed33c0ee6211ebd9
 
   return (
     <div className={twMerge(`flex h-full`, player.activeId && "h-[calc(100%-80px)]")}>
