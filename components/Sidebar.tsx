@@ -21,23 +21,21 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const pathname = usePathname()
   const player = usePlayer()
 
-  const routes = useMemo(
-    () => [
-      {
-        icon: HiHome,
-        label: "Home",
-        active: pathname !== "/search",
-        href: "/",
-      },
-      {
-        icon: BiSearch,
-        label: "Search",
-        active: pathname === "/search",
-        href: "/search",
-      },
-    ],
-    [pathname],
-  )
+const routes = [
+  {
+    icon: HiHome,
+    label: "Home",
+    active: pathname !== "/search",
+    href: "/",
+  },
+  {
+    icon: BiSearch,
+    label: "Search",
+    active: pathname === "/search",
+    href: "/search",
+  },
+]
+
 
   return (
     <div
