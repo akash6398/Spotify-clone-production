@@ -8,13 +8,15 @@ interface SupabaseProviderProps {
   children: React.ReactNode
 }
 
-const SupabaseProvider: React.FC<SupabaseProviderProps> = ({ children }) => {
+const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
   const [supabaseClient] = useState(() =>
     createClientComponentClient()
   )
 
   return (
-    <SessionContextProvider supabaseClient={supabaseClient}>
+    <SessionContextProvider
+      supabaseClient={supabaseClient as any}
+    >
       {children}
     </SessionContextProvider>
   )
