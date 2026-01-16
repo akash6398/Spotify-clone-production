@@ -10,14 +10,15 @@ import getSongsByUserId from "@/actions/getSongsByUserId"
 import Player from "@/components/Player"
 import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices"
 
+export const runtime = "nodejs" // ✅ FIX
+export const revalidate = 0
+
 const figtree = Figtree({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Spotify clone",
   description: "Listen to music!",
 }
-
-export const revalidate = 0
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const userSongs = await getSongsByUserId()

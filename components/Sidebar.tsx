@@ -21,24 +21,23 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const pathname = usePathname()
   const player = usePlayer()
 
-  const routes = useMemo(
-    () => [
-      {
-        icon: HiHome,
-        label: "Home",
-        active: pathname !== "/search",
-        href: "/",
-      },
-      {
-        icon: BiSearch,
-        label: "Search",
-        active: pathname === "/search",
-        href: "/search",
-      },
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    ],
-    [],
-  )
+ const routes = useMemo(
+  () => [
+    {
+      icon: HiHome,
+      label: "Home",
+      active: pathname !== "/search",
+      href: "/",
+    },
+    {
+      icon: BiSearch,
+      label: "Search",
+      active: pathname === "/search",
+      href: "/search",
+    },
+  ],
+  [pathname],
+)
 
   return (
     <div className={twMerge(`flex h-full`, player.activeId && "h-[calc(100%-80px)]")}>
