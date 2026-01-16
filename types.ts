@@ -51,6 +51,46 @@ export interface UserDetails {
 export interface ProductWithPrice extends Product {
   prices?: Price[]
 }
+export type Database = {
+  public: {
+    Tables: {
+      songs: {
+        Row: Song
+        Insert: Partial<Song>
+        Update: Partial<Song>
+      }
+      products: {
+        Row: Product
+        Insert: Partial<Product>
+        Update: Partial<Product>
+      }
+      prices: {
+        Row: Price
+        Insert: Partial<Price>
+        Update: Partial<Price>
+      }
+      subscriptions: {
+        Row: Subscription
+        Insert: Partial<Subscription>
+        Update: Partial<Subscription>
+      }
+      customers: {
+        Row: Customer
+        Insert: Partial<Customer>
+        Update: Partial<Customer>
+      }
+      users: {
+        Row: UserDetails
+        Insert: Partial<UserDetails>
+        Update: Partial<UserDetails>
+      }
+    }
+    Views: {}
+    Functions: {}
+    Enums: {}
+  }
+}
+
 
 export interface Subscription {
   id: string
